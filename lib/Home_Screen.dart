@@ -1,3 +1,4 @@
+import 'package:dummy_app/ApiCallScreen.dart';
 import 'package:dummy_app/Contact.dart';
 import 'package:dummy_app/style.dart';
 import 'package:flutter/material.dart';
@@ -32,6 +33,22 @@ class _HomeScreenState extends State<HomeScreen> {
         padding: const EdgeInsets.all(8.0),
         child: Column(
           children: [
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const Apicallscreen(),
+                  ),
+                );
+              },
+              child: const Text('Go API Call'),
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.yellow,
+                textStyle: TextStyle(fontSize: 20),
+              ),
+            ),
+            SizedBox(height: 10),
             TextField(
               controller: nameController,
               decoration: apptextfielddecoration.main(hinttext: "Enter name"),
